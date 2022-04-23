@@ -48,9 +48,7 @@ namespace Another_Archery_Patcher.ConfigHelpers
         /// <returns>(float): The modified damage.</returns>
         public float GetDamage(float current, out bool changed)
         {
-            float newDamage = DamageIsModifier
-                ? (current + Damage)
-                : Damage;
+            float newDamage = current * Damage;
             // change when the current value is not equal to the modified value
             changed = !current.EqualsWithin(newDamage);
             return changed ? newDamage : current;
